@@ -37,12 +37,12 @@ try:
     if len(UPSTREAM_REPO) == 0:
        raise TypeError
 except:
-    UPSTREAM_REPO = "https://github.com/God2020k/Eagle"
+    UPSTREAM_REPO = "https://github.com/weebzone/WZML"
 try:
     if len(UPSTREAM_BRANCH) == 0:
        raise TypeError
 except:
-    UPSTREAM_BRANCH = 'Heroku'
+    UPSTREAM_BRANCH = 'Update'
 
 if ospath.exists('.git'):
     srun(["rm", "-rf", ".git"])
