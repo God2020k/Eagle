@@ -37,12 +37,12 @@ try:
     if len(UPSTREAM_REPO) == 0:
        raise TypeError
 except:
-    UPSTREAM_REPO = "https://github.com/Kk2020k/WZML-V1"
+    UPSTREAM_REPO = "https://github.com/BalaPriyan/WZML-Heroku"
 try:
     if len(UPSTREAM_BRANCH) == 0:
        raise TypeError
 except:
-    UPSTREAM_BRANCH = 'Update'
+    UPSTREAM_BRANCH = 'update'
 
 if ospath.exists('.git'):
     srun(["rm", "-rf", ".git"])
@@ -64,4 +64,3 @@ else:
     log_error('Something went wrong while updating, check UPSTREAM_REPO if valid or not!')
     log_info(f'Entered Upstream Repo: {UPSTREAM_REPO}')
     log_info(f'Entered Upstream Branch: {UPSTREAM_BRANCH}')
-
