@@ -317,7 +317,7 @@ class MirrorLeechListener:
         else:
             warnmsg = ''
         if BOT_PM and self.message.chat.type != 'private':
-            if EMOJI_THEME is True:
+            if EMOJI_THEME is False:
                 pmwarn = f"<b>😉 I have sent files in PM.</b>\n"
             else:
                 pmwarn = f"<b>I have sent files in PM.</b>\n"
@@ -433,7 +433,7 @@ class MirrorLeechListener:
                     msg += f'\n<b>├💀 Corrupted Files: </b>{typ}'
                 else:
                     msg += f'\n<b>├ Corrupted Files: </b>{typ}'
-            if EMOJI_THEME is True:
+            if EMOJI_THEME is False:
                 msg += f'\n<b>├⌛ It Tooks:</b> {get_readable_time(time() - self.message.date.timestamp())}'
                 msg += f'\n<b>╰👤 #Leech_by: </b>{self.tag}\n\n'
             else: 
@@ -468,7 +468,7 @@ class MirrorLeechListener:
                         else:
                             uploadmsg = sendMarkup(msg + fmsg + pmwarn + logleechwarn + warnmsg, self.bot, self.message, buttons.build_menu(2))
                         Thread(target=auto_delete_upload_message, args=(bot, self.message, uploadmsg)).start()
-                if LEECH_LOG_INDEXING is True:
+                if LEECH_LOG_INDEXING is False:
                     for i in LEECH_LOG:
                         indexmsg = ''
                         for index, (link, name) in enumerate(files.items(), start=1):
